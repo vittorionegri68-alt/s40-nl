@@ -1,0 +1,24 @@
+{
+  "name": "s40-nl",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "S40 Fietsservice, Dutch website (React 18 + Vite). Built by AI'm by VNS.",
+  "scripts": {
+    "dev": "vite",
+    "routes": "node scripts/generate-routes.mjs",
+    "build": "chmod +x node_modules/.bin/* && node scripts/generate-routes.mjs && node generate-geo-static.mjs && node generate-blog-noscript.mjs && node generate-blog-pages.mjs && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.8"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
