@@ -1,0 +1,72 @@
+# S40 Fietsservice Nijkerk
+
+> S40 Fietsservice is een werkplaats en winkel voor racefietsen, gravelbikes, BMX, baanfietsen en triatlonfietsen aan de Singel 40 in Nijkerk, Nederland. Fietsers die fietsers helpen: met meer dan twintig jaar ervaring in Europa, UCI-certificering en ervaring als monteur in UCI-teams. Onderhoud, reparatie, bikefit en fietsen op maat.
+
+## Websites
+
+- [Nederlands (hoofdsite)](https://s40.nl): werkplaats, diensten, veelgestelde vragen, routes, blog en contact
+- [English](https://en.s40.nl): the same site in English
+
+## Contact
+
+- Adres: Singel 40, 3861 AE Nijkerk, Nederland
+- Telefoon: +31 6 26980438
+- E-mail: service@s40.nl
+- Instagram: https://www.instagram.com/s40service/
+- LinkedIn: https://www.linkedin.com/company/s40-fietsservice/
+- Google Business Profile: https://maps.google.com/?cid=13330340953958264063
+- Openingstijden: dinsdag tot en met vrijdag 10:00-18:00, zaterdag 10:00-16:00, zondag en maandag gesloten. Binnenlopen zonder afspraak kan.
+- Bedrijf: S40 Fietsservice B.V., KvK 42080401, BTW NL869616250B01
+- Talen: Nederlands, Engels, Pools
+
+## Wat S40 Fietsservice doet
+
+- Onderhoud en reparatie van racefietsen, gravelbikes, BMX'en, baanfietsen en triatlon- en tijdritfietsen (ook mountainbikes zijn welkom)
+- Bikefit en set-up
+- Wedstrijdvoorbereiding volgens UCI-normen
+- Fietsen op maat samenstellen, nieuw of tweedehands, met advies bij aankoop
+- Verkoop van fietsen (ook custom), onderdelen en accessoires
+- Neemt ook klussen aan die andere werkplaatsen weigeren; het onderzoek en het zoeken naar de beste oplossing wordt niet doorberekend
+- Gebruikelijke doorlooptijd: 24 uur. Prijzen op aanvraag.
+- Geen ophaal- en bezorgservice, geen mobiele service, geen fietsverhuur
+- Merken: YOONIT en Cyclon (dealer), Izumi-kettingen
+
+## Veelgestelde vragen (met antwoord op https://s40.nl/#vragen)
+
+- Welke fietsenmaker in Nijkerk is gespecialiseerd in racefietsen?
+- Waar kan ik in Nijkerk mijn gravelbike laten onderhouden of repareren?
+- Wat is een bikefit en waar kan ik die laten doen bij Nijkerk?
+- Is er in Nijkerk een fietsenmaker met ervaring als monteur in UCI-teams?
+- Ik zoek een fietsenmaker bij Nijkerk voor mijn baanfiets of tijdritfiets: wie kan dat?
+- Ik rijd binnenkort een wedstrijd: waar kan ik mijn racefiets laten nakijken en voorbereiden bij Nijkerk?
+- Mijn fiets heeft een probleem dat andere werkplaatsen niet kunnen oplossen: welke fietsenmaker bij Nijkerk pakt zulke klussen aan?
+- Hoe weet ik of mijn racefiets goed op mijn lichaam is afgesteld en wanneer heb ik een bikefit nodig?
+- Hoe laat ik een fiets op maat samenstellen, nieuw of tweedehands, en wat kan ik van tevoren voorbereiden?
+- Hoe maak ik een afspraak bij een racefietsenmaker in Nijkerk en wat zijn de openingstijden?
+
+## Blog en nieuws
+
+- [Racefietsenmaker in Nijkerk: waar je fiets in goede handen is](https://s40.nl/post/racefietsenmaker-nijkerk.html)
+- [Gravelbike onderhouden of laten repareren in Nijkerk: wat je moet weten](https://s40.nl/post/gravelbike-onderhoud-nijkerk.html)
+- [Wat is een bikefit en waar laat je die doen bij Nijkerk?](https://s40.nl/post/bikefit-nijkerk.html)
+- [S40 Fietsservice sponsort BMX-racer Suéla Schouten uit Nijkerk](https://s40.nl/post/nieuws-suela-schouten.html)
+
+## Routes
+
+Vier wegroutes vanaf Nijkerk (48, 50, 97 en 114 km) met kaart, hoogteprofiel en GPX-download op https://s40.nl/#routes
+
+## AI Permissions
+
+Deze site staat toe dat AI-crawlers de inhoud lezen, indexeren en citeren om vragen van gebruikers te beantwoorden.
+
+User-agent: GPTBot - allowed
+User-agent: ChatGPT-User - allowed
+User-agent: OAI-SearchBot - allowed
+User-agent: PerplexityBot - allowed
+User-agent: Googlebot - allowed
+User-agent: Google-Extended - allowed
+User-agent: anthropic-ai - allowed
+User-agent: ClaudeBot - allowed
+User-agent: cohere-ai - allowed
+User-agent: Meta-ExternalAgent - allowed
+User-agent: Applebot - allowed

@@ -1,0 +1,6 @@
+/* Saira Condensed (headings, uppercase) + Saira (body). Self-hosted, Latin subset, SIL Open Font License. No CDN. */
+@font-face{font-family:"Saira Condensed";src:url("/fonts/SairaCondensed-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Saira Condensed";src:url("/fonts/SairaCondensed-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Saira Condensed";src:url("/fonts/SairaCondensed-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Saira Condensed";src:url("/fonts/SairaCondensed-Black.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"Saira";src:url("/fonts/Saira-Variable.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}

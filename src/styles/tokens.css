@@ -1,0 +1,47 @@
+:root{
+/* Brand base */
+--s40-green:#76A776;--s40-milk:#EBFCE8;--s40-anthracite:#2A2D31;--s40-white:#FFFFFF;--s40-black:#111214;
+/* Green scale (tints mixed with white, shades with black) */
+--green-50:#EFF4EF;--green-100:#DBE8DB;--green-200:#C3D8C3;--green-300:#A7C7A7;--green-400:#8FB78F;--green-500:#76A776;--green-600:#659065;--green-700:#537553;--green-800:#3D573D;--green-900:#2A3C2A;
+/* Anthracite scale */
+--ant-50:#F4F5F6;--ant-100:#DDDDDE;--ant-200:#BBBCBD;--ant-300:#959698;--ant-400:#6E7073;--ant-500:#4C4F52;--ant-600:#393C3F;--ant-700:#2A2D31;--ant-800:#202225;--ant-900:#17191B;
+/* Semantic: status */
+--status-ok:#76A776;--status-warn:#E0B84A;--status-error:#D9604C;
+/* Semantic: dark theme (default brand surface) */
+--bg-dark:var(--ant-800);--surface-dark:var(--ant-700);--surface-dark-raised:var(--ant-600);--border-dark:var(--ant-500);
+--text-on-dark:#FFFFFF;--text-on-dark-muted:var(--ant-300);--text-on-dark-accent:var(--green-500);
+/* Semantic: light theme */
+--bg-light:var(--s40-milk);--surface-light:#FFFFFF;--surface-light-sunk:var(--green-50);--border-light:var(--ant-100);
+--text-on-light:var(--ant-700);--text-on-light-muted:var(--ant-400);--text-on-light-accent:var(--green-800);
+/* Interactive */
+--accent:var(--green-500);--accent-hover:var(--green-400);--accent-press:var(--green-600);--on-accent:var(--ant-900);
+--link-on-dark:var(--green-400);--link-on-dark-hover:var(--green-200);
+--link-on-light:var(--green-800);--link-on-light-hover:var(--ant-700);
+--focus-ring:var(--green-400);
+}
+:root{
+--font-display:"Saira Condensed","Arial Narrow",sans-serif;
+--font-body:"Saira",system-ui,sans-serif;
+--weight-body:400;--weight-body-strong:600;--weight-display:800;--weight-display-black:900;
+/* Web type scale, 1.25 ratio from 16px */
+--fs-display:clamp(56px,8vw,112px);--fs-h1:clamp(44px,5.5vw,72px);--fs-h2:clamp(34px,4vw,52px);--fs-h3:32px;--fs-h4:24px;--fs-h5:20px;
+--fs-lead:20px;--fs-body:16px;--fs-small:14px;--fs-caption:12px;
+--lh-display:0.9;--lh-heading:1.0;--lh-body:1.55;--lh-tight:1.25;
+--tracking-display:-0.005em;--tracking-heading:0.01em;--tracking-label:0.12em;
+}
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;
+--container:1240px;--gutter:clamp(20px,4vw,48px);
+--radius-0:0;--radius-1:2px;--radius-2:4px;--radius-pill:999px;
+}
+:root{
+/* Signature diagonal: 14deg forward lean, matches the S40 mark italic */
+--slant:-14deg;--slant-tan:0.249;
+--clip-slant-right:polygon(0 0,100% 0,calc(100% - 24px) 100%,0 100%);
+--clip-parallelogram:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%);
+--shadow-1:0 1px 0 rgba(255,255,255,.04) inset,0 2px 6px rgba(0,0,0,.25);
+--shadow-2:0 12px 32px rgba(0,0,0,.35);
+--shadow-light:0 1px 2px rgba(42,45,49,.08),0 6px 20px rgba(42,45,49,.08);
+--ease-out:cubic-bezier(.2,.8,.2,1);--ease-snap:cubic-bezier(.5,0,.1,1);
+--dur-fast:120ms;--dur-base:200ms;--dur-slow:420ms;
+}
