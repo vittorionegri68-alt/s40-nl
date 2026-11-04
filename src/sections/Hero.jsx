@@ -10,14 +10,14 @@ export default function Hero() {
   useEffect(() => {
     let t;
     const go = () => {
-      t = setTimeout(() => setReady(true), 1400);
+      t = setTimeout(() => setReady(true), 400);
     };
     const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
     const img = new Image();
     img.src = "/assets/images/tool-wall.webp";
     const imgReady = img.decode ? img.decode().catch(() => {}) : Promise.resolve();
     Promise.all([fonts, imgReady]).then(go);
-    const fallback = setTimeout(() => setReady(true), 12500);
+    const fallback = setTimeout(() => setReady(true), 2500);
     return () => {
       clearTimeout(t);
       clearTimeout(fallback);
