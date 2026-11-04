@@ -400,3 +400,10 @@ html.pager-on .dots { display: flex; }
 .hero__bg img { opacity: 0; transform: scale(1.07); }
 .hero--in .hero__bg img { opacity: .35; transform: none; transition: opacity 2600ms cubic-bezier(.4, 0, .2, 1) 500ms, transform 3600ms cubic-bezier(.2, .8, .2, 1) 300ms; }
 @media (prefers-reduced-motion: reduce) { .hero__bg img { opacity: .35; transform: none; } }
+
+/* Hero speed trail: ghost copies appear with the mark and fade out once it is complete (intro only) */
+.hero .mark__trail { opacity: 1; }
+.hero .mark__tsl { opacity: 0; }
+.hero--in .mark__tsl { opacity: 1; transition: opacity 420ms var(--ease-out) 760ms; }
+.hero--in .mark__trail { opacity: 0; transition: opacity 900ms ease 1700ms; }
+@media (prefers-reduced-motion: reduce) { .hero .mark__trail { display: none; } }

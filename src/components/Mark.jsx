@@ -12,10 +12,16 @@ const PATHS = {
   zero: "M146.50 0.06 L142.94 0.25 L138.38 1.12 L136.12 2.06 L133.81 3.25 L131.56 5.00 L129.94 6.50 L128.12 9.06 L127.12 11.12 L126.31 13.38 L125.75 16.12 L125.19 17.69 L124.88 19.62 L124.12 22.19 L123.81 24.12 L123.25 25.69 L122.88 28.06 L122.06 30.69 L121.81 32.50 L121.06 34.75 L120.75 36.69 L119.00 43.31 L118.12 47.75 L118.25 51.25 L119.31 54.38 L120.56 56.31 L122.38 58.00 L125.69 59.75 L129.00 60.62 L130.62 60.88 L132.06 60.75 L132.56 60.19 L133.25 57.00 L133.75 55.62 L134.12 53.56 L134.94 51.06 L134.94 50.56 L134.38 50.00 L133.38 49.94 L132.44 49.62 L131.00 48.50 L130.62 47.06 L130.62 46.00 L131.06 43.69 L131.88 41.00 L132.12 39.31 L132.81 37.19 L133.88 32.81 L134.12 31.19 L134.69 29.56 L135.00 27.88 L135.81 25.00 L136.06 23.38 L136.81 21.12 L137.06 19.50 L137.81 16.88 L138.12 15.12 L139.12 13.38 L140.19 12.31 L141.75 11.50 L144.00 11.00 L144.62 10.50 L145.81 6.06 L146.19 4.00 L146.88 1.94 L147.00 0.56Z M156.38 1.25 L151.25 0.12 L150.25 0.31 L149.81 0.94 L148.81 5.31 L148.12 7.31 L147.50 10.44 L147.88 10.94 L149.31 11.31 L150.38 11.94 L151.19 13.06 L151.31 15.19 L150.69 18.25 L150.12 20.00 L149.75 22.06 L149.19 23.62 L148.75 26.12 L147.25 31.62 L146.75 34.31 L146.19 36.06 L145.81 38.12 L145.25 39.88 L144.88 42.00 L143.88 45.94 L142.81 47.81 L141.88 48.81 L140.06 49.69 L138.50 50.00 L137.81 50.56 L137.38 51.69 L136.81 54.44 L135.38 59.62 L135.38 60.50 L135.75 60.88 L136.81 61.00 L140.06 60.69 L144.06 59.62 L145.94 58.94 L147.88 57.88 L149.75 56.56 L151.75 54.62 L153.81 51.81 L154.81 49.75 L155.88 46.50 L156.25 44.56 L156.88 42.62 L157.00 41.50 L157.88 38.38 L158.06 37.06 L158.81 34.75 L160.06 28.94 L161.75 22.62 L162.12 20.44 L162.81 18.38 L163.94 12.88 L163.88 10.56 L163.62 8.81 L163.00 7.12 L162.00 5.31 L160.69 3.88 L158.50 2.25Z",
 };
 // Horizontal extent of each letter, used for the reveal masks
+// Outline width (viewBox units) drawn in the same colour as the shape: smooths the traced edges
+const EDGE = 0.7;
+// Speed trail: ghost copies behind the mark during the intro only (offset in viewBox units, opacity)
+const TRAIL = [[9, 0.1], [6, 0.18], [3, 0.3]];
 const SPAN = { s: [0.0, 51.0], four: [74.8, 119.9], zero: [118.1, 163.9] };
 
 export default function Mark({ tone = "reversed", className = "", title }) {
   const letter = tone === "reversed" ? "#FFFFFF" : "#2A2D31";
+  const green = "#76A776";
+  const edge = (c) => ({ fill: c, stroke: c, strokeWidth: EDGE, strokeLinejoin: "round" });
   const uid = useId().replace(/[^a-zA-Z0-9]/g, "");
   const mid = 61.06 / 2;
   const mask = (key, cls) => (
@@ -36,14 +42,26 @@ export default function Mark({ tone = "reversed", className = "", title }) {
         {mask("s", "mark__s")}
         {mask("four", "mark__4")}
         {mask("zero", "mark__0")}
+        <filter id={`${uid}-blur`} x="-20%" y="-10%" width="140%" height="120%"><feGaussianBlur stdDeviation="1.1 0" /></filter>
       </defs>
-      <path fill={letter} d={PATHS.s} mask={`url(#${uid}-s)`} />
-      <g className="mark__slashes" fill="#76A776">
-        <path className="mark__sl1" d={PATHS.sl1} />
-        <path className="mark__sl2" d={PATHS.sl2} />
+      <g className="mark__trail" filter={`url(#${uid}-blur)`} aria-hidden="true">
+        {TRAIL.map(([dx, o]) => (
+          <g key={dx} transform={`translate(${-dx} 0)`} opacity={o}>
+            <path {...edge(letter)} d={PATHS.s} mask={`url(#${uid}-s)`} />
+            <path className="mark__tsl" {...edge(green)} d={PATHS.sl1} />
+            <path className="mark__tsl" {...edge(green)} d={PATHS.sl2} />
+            <path {...edge(letter)} d={PATHS.four} mask={`url(#${uid}-four)`} />
+            <path {...edge(letter)} d={PATHS.zero} mask={`url(#${uid}-zero)`} />
+          </g>
+        ))}
       </g>
-      <path fill={letter} d={PATHS.four} mask={`url(#${uid}-four)`} />
-      <path fill={letter} d={PATHS.zero} mask={`url(#${uid}-zero)`} />
+      <path {...edge(letter)} d={PATHS.s} mask={`url(#${uid}-s)`} />
+      <g className="mark__slashes">
+        <path className="mark__sl1" {...edge(green)} d={PATHS.sl1} />
+        <path className="mark__sl2" {...edge(green)} d={PATHS.sl2} />
+      </g>
+      <path {...edge(letter)} d={PATHS.four} mask={`url(#${uid}-four)`} />
+      <path {...edge(letter)} d={PATHS.zero} mask={`url(#${uid}-zero)`} />
     </svg>
   );
 }
