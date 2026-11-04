@@ -10,7 +10,7 @@ export default function Hero() {
   useEffect(() => {
     let t;
     const go = () => {
-      t = setTimeout(() => setReady(true), 400);
+      t = setTimeout(() => setReady(true), 140);
     };
     const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
     const img = new Image();
