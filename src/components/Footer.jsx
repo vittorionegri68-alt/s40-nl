@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__in">
         <div className="footer__brand">
-          <img src="/assets/s40-lockup-horizontal-reversed.svg?v=2" alt={contact.brand} width="170" height="45" loading="lazy" />
+          <img src="/assets/s40-lockup-horizontal-reversed.svg?v=3" alt={contact.brand} width="170" height="45" loading="lazy" />
           <p>{c.tagline}</p>
         </div>
         <div>

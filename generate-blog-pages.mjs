@@ -178,7 +178,7 @@ function renderPage(post, idToSlug, ordered) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeAttr(description)}" />
     <link rel="canonical" href="${escapeAttr(url)}" />
@@ -255,7 +255,7 @@ ${renderAlternates(post, url)}
     </style>
   </head>
   <body>
-    <header class="bar"><div class="bar-in"><a href="/" aria-label="${escapeAttr(BRAND)}"><img src="/assets/s40-lockup-horizontal-reversed.svg?v=2" alt="${escapeAttr(BRAND)}" width="140" height="34" /></a></div></header>
+    <header class="bar"><div class="bar-in"><a href="/" aria-label="${escapeAttr(BRAND)}"><img src="/assets/s40-lockup-horizontal-reversed.svg?v=3" alt="${escapeAttr(BRAND)}" width="140" height="34" /></a></div></header>
     <div class="wrap">
       <div class="top-nav">
         <a href="${escapeAttr(UI.backHref)}">&larr; ${escapeHtml(UI.back)}</a>

@@ -21,7 +21,7 @@ export default function Nav({ activeId }) {
     <header className="nav">
       <div className="nav__in">
         <a className="nav__logo" href="#home" aria-label={c.home} onClick={() => setOpen(false)}>
-          <img src="/assets/s40-lockup-horizontal-reversed.svg?v=2" alt={copy.hero.markLabel} width="273" height="40" />
+          <img src="/assets/s40-lockup-horizontal-reversed.svg?v=3" alt={copy.hero.markLabel} width="273" height="40" />
         </a>
 
         <nav className="nav__links" aria-label="Hoofdmenu">
