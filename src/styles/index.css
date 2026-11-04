@@ -125,13 +125,13 @@ html.pager-on .dots { display: flex; }
 .hero .mark { width: min(78vw, 1040px); height: auto; overflow: visible; filter: drop-shadow(0 18px 40px rgba(0,0,0,.35)); }
 .hero .mark__s, .hero .mark__4, .hero .mark__0 { stroke-dasharray: 1; stroke-dashoffset: 1; }
 .hero .mark__slashes polygon { opacity: 0; transform: translateX(-34px); }
-.hero--in .mark__s, .hero--in .mark__4, .hero--in .mark__0 { stroke-dashoffset: 0; transition: stroke-dashoffset 950ms cubic-bezier(.5, 0, .1, 1); }
-.hero--in .mark__4 { transition-delay: 140ms; }
-.hero--in .mark__0 { transition-delay: 280ms; }
-.hero--in .mark__slashes polygon { opacity: 1; transform: none; transition: opacity 420ms var(--ease-out) 760ms, transform 520ms var(--ease-out) 760ms; }
-.hero--in .mark__sl2 { transition-delay: 860ms !important; }
+.hero--in .mark__s, .hero--in .mark__4, .hero--in .mark__0 { stroke-dashoffset: 0; transition: stroke-dashoffset 1600ms cubic-bezier(.5, 0, .1, 1); }
+.hero--in .mark__4 { transition-delay: 280ms; }
+.hero--in .mark__0 { transition-delay: 500ms; }
+.hero--in .mark__slashes polygon { opacity: 1; transform: none; transition: opacity 420ms var(--ease-out) 1300ms, transform 520ms var(--ease-out) 1300ms; }
+.hero--in .mark__sl2 { transition-delay: 1500ms !important; }
 .hero__veil { position: absolute; inset: 0; background: var(--ant-900); opacity: 1; pointer-events: none; z-index: 2; }
-.hero--in .hero__veil { opacity: 0; transition: opacity 950ms var(--ease-out) 520ms; }
+.hero--in .hero__veil { opacity: 0; transition: opacity 1800ms var(--ease-out) 900ms; }
 .hero__scroll { position: absolute; z-index: 3; left: 50%; bottom: 22px; transform: translateX(-50%); display: grid; place-items: center; width: 48px; height: 48px; color: var(--green-400); animation: nudge 2.2s var(--ease-out) infinite; }
 @keyframes nudge { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
