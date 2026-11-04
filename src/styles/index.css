@@ -131,7 +131,7 @@ html.pager-on .dots { display: flex; }
 .hero--in .mark__slashes polygon { opacity: 1; transform: none; transition: opacity 1420ms var(--ease-out) 2300ms, transform 1520ms var(--ease-out) 2300ms; }
 .hero--in .mark__sl2 { transition-delay: 2500ms !important; }
 .hero__veil { position: absolute; inset: 0; background: var(--ant-900); opacity: 1; pointer-events: none; z-index: 2; }
-.hero--in .hero__veil { opacity: 0; transition: opacity 2800ms var(--ease-out) 1900ms; }
+.hero--in .hero__veil { opacity: 0; transition: opacity 4800ms var(--ease-out) 3900ms; }
 .hero__scroll { position: absolute; z-index: 3; left: 50%; bottom: 22px; transform: translateX(-50%); display: grid; place-items: center; width: 48px; height: 48px; color: var(--green-400); animation: nudge 2.2s var(--ease-out) infinite; }
 @keyframes nudge { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
