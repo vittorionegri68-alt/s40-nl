@@ -89,7 +89,7 @@ export const copy = {
       { src: "/assets/images/sram-red-boxes.webp", alt: "Drie dozen met crankstel, cassette en kettingblad naast een ketting en pedalen" },
       { src: "/assets/images/felt-tt-showroom.webp", alt: "Witte tijdritfiets in de winkel" },
       { src: "/assets/images/trek-gravel-showroom.webp", alt: "Gravelbike op een montagestandaard in de zithoek van de winkel" },
-      { src: "/assets/images/chain-cleaning-cyclon.webp", alt: "Fietsketting in de reinigingsmachine van Cyclon" },
+      { src: "/assets/images/chain-cleaning-cyclon.webp", alt: "Fietsketting in de reinigingsmachine van CyclOn" },
     ],
   },
   qa: {
