@@ -35,7 +35,13 @@ export default function Services() {
               <li key={a}><Icon name="check" size={18} strokeWidth={3} /> {a}</li>
             ))}
           </ul>
-          <p className="also__brands">{c.brands}</p>
+        </div>
+
+        <div className="brandline reveal">
+          <p className="brandline__label">{c.brandsLabel}</p>
+          <p className="brandline__text">
+            {c.brands.split(/(YOONIT|Cyclon|Izumi)/g).map((t, i) => (i % 2 ? <strong key={i}>{t}</strong> : t))}
+          </p>
         </div>
       </div>
     </section>

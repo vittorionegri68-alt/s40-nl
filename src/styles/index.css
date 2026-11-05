@@ -149,9 +149,19 @@ html.pager-on .dots { display: flex; }
 .also { margin-top: clamp(16px, 3vh, 30px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 32px; }
 .also__list { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 .also__list li { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--green-800); font-size: 15px; }
-.also__brands { font-size: 14px; color: var(--ant-500); }
+.brandline { margin-top: clamp(12px, 2vh, 22px); padding-top: clamp(10px, 1.6vh, 16px); border-top: 1px solid var(--ant-100); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 28px; }
+.brandline__label { font: 800 13px / 1 var(--font-display); text-transform: uppercase; letter-spacing: .16em; color: var(--green-800); }
+.brandline__text { font: 800 clamp(22px, 2.6vw, 30px) / 1.05 var(--font-display); text-transform: uppercase; letter-spacing: .01em; color: var(--ant-500); }
+.brandline__text strong { font-weight: 900; color: var(--ant-900); }
 @media (min-width: 640px) { .cards { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1100px) { .cards { grid-template-columns: repeat(4, 1fr); } }
+/* Short desktop viewports: tighter cards so the whole block still fits one screen */
+@media (min-width: 1100px) and (max-height: 960px) {
+  .cards { gap: 10px; }
+  .card { padding: 14px 18px 16px; gap: 6px; }
+  .card__icon { width: 42px; height: 42px; margin-bottom: 2px; }
+  .card__title { font-size: 22px; }
+}
 
 /* About */
 .about { display: grid; grid-template-columns: 1fr; gap: 32px 56px; align-items: start; }
