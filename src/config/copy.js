@@ -43,7 +43,7 @@ export const copy = {
     ],
     price: { title: "Prijzen op aanvraag", text: "Elke fiets en elke klus is anders. Vertel ons wat je rijdt en wat er moet gebeuren.", cta: "Neem contact op" },
     also: ["Onderhoud en reparatie, alle werkzaamheden", "Wedstrijdvoorbereiding", "Onderdelen en accessoires", "Verkoop van fietsen, ook custom"],
-    brands: "Dealer van YOONIT en Cyclon. Kettingen van Izumi.",
+    brands: "Dealer van YOONIT, CyclOn, Izumi-kettingen.",
     brandsLabel: "Merken waar we mee werken",
   },
   about: {

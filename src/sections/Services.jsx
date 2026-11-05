@@ -40,7 +40,7 @@ export default function Services() {
         <div className="brandline reveal">
           <p className="brandline__label">{c.brandsLabel}</p>
           <p className="brandline__text">
-            {c.brands.split(/(YOONIT|Cyclon|Izumi)/g).map((t, i) => (i % 2 ? <strong key={i}>{t}</strong> : t))}
+            {c.brands.split(/(YOONIT|CyclOn|Izumi)/gi).map((t, i) => (i % 2 ? <strong key={i}>{t}</strong> : t))}
           </p>
         </div>
       </div>
