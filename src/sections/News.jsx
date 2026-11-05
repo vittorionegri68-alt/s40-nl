@@ -67,7 +67,7 @@ function Article({ post, onClose, onOpenOther }) {
           if (b.tipo === "link")
             return (
               <p key={i}>
-                <Button href={b.testo} external variant="secondary" icon="arrow-up-right" size="sm">{b.etichetta || b.testo}</Button>
+                <Button href={b.testo} external variant="primary" icon="arrow-up-right" size="sm">{b.etichetta || b.testo}</Button>
               </p>
             );
           return null;
