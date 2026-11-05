@@ -10,6 +10,7 @@
 //     { tipo: "paragrafo", testo }            paragraph; use [[label|post-id]] for an internal link
 //     { tipo: "titoletto", testo }            sub heading
 //     { tipo: "immagine", testo: "/assets/images/x.webp", etichetta: "alt text and caption" }
+//     { tipo: "logo", testo: "/assets/images/x.png", etichetta: "alt text" }   small brand logo on a light chip, no caption
 //     { tipo: "link", testo: "https://...", etichetta: "button label" }
 //   attivo    true to publish, false to hide (build removes its static page)
 //
@@ -17,6 +18,35 @@
 // "Read also" blocks are added automatically (the 2 most recent other posts); do not write them by hand.
 
 export const posts = [
+  {
+    id: "yoonit-cargobikes-nijkerk",
+    titolo: "YOONIT cargobikes in Nijkerk: bekijk en probeer ze bij S40 Fietsservice",
+    data: "2026-11-05",
+    categoria: "Blog",
+    sommario:
+      "YOONIT bouwt compacte cargobikes in Hamburg, voor gezin, dagelijkse boodschappen of werk. S40 Fietsservice in Nijkerk is officieel dealer: je kunt er verschillende modellen bekijken en proberen.",
+    contenuto: [
+      { tipo: "paragrafo", testo: "Een traditionele bakfiets is handig, maar ook groot en lastig te stallen. Wie kinderen, de hond of de boodschappen wil meenemen, hoeft daarvoor niet altijd zo'n fiets te kiezen. YOONIT bouwt cargobikes die veel compacter zijn, en bij S40 Fietsservice in Nijkerk kun je ze zien en proberen." },
+      { tipo: "logo", testo: "/assets/images/yoonit-logo.png", etichetta: "YOONIT" },
+      { tipo: "titoletto", testo: "Wat is YOONIT?" },
+      { tipo: "paragrafo", testo: "YOONIT is een merk uit Hamburg. Het ontwerpt compacte cargo- en stadsfietsen en bouwt ze zelf in Hamburg op, met Europese onderdelen. Het merk omschrijft zijn fietsen als compact en modulair. S40 Fietsservice aan de Singel 40 is officieel dealer van YOONIT." },
+      { tipo: "titoletto", testo: "Welke modellen zijn er?" },
+      { tipo: "paragrafo", testo: "De Mini Cargobike is de ultracompacte lastenfiets voor gezin en dagelijks gebruik: voor kinderen, de hond en de boodschappen. Volgens YOONIT is hij licht, wendbaar en net zo makkelijk te rijden als een gewone fiets." },
+      { tipo: "paragrafo", testo: "De Micro Utility Bike is nog kleiner. YOONIT noemt hem de kleinste fiets met cargo-gevoel, met verwisselbare kratten en manden. De PRO Business Bike is bedoeld voor ondernemers, ambachtslieden en maatschappelijke projecten." },
+      { tipo: "titoletto", testo: "Een fiets die past bij hoe jij hem gebruikt" },
+      { tipo: "paragrafo", testo: "De Mini Cargobike is er voor drie soorten gebruik: Family Up voor het gezin, Daily Basket en Dog Seat voor boodschappen en de hond, en Job Carrier voor werk. De fietsen van YOONIT zijn volledig te configureren, dus je stelt ze samen op jouw gebruik." },
+      { tipo: "titoletto", testo: "Accessoires" },
+      { tipo: "paragrafo", testo: "Bij de Micro Utility Bike horen verwisselbare kratten en manden. Voor de Mini Cargobike is er een uitvoering met mand en hondenzitje. Welke modellen, uitvoeringen en accessoires er in de winkel staan, wisselt. Vraag er gerust naar." },
+      { tipo: "titoletto", testo: "Ook met elektrische aandrijving" },
+      { tipo: "paragrafo", testo: "Elektrische aandrijving is bij YOONIT mogelijk, onder meer bij de Mini Cargobike. Vraag in de winkel wat de mogelijkheden zijn." },
+      { tipo: "titoletto", testo: "Bekijken en proberen in Nijkerk" },
+      { tipo: "paragrafo", testo: "Bij S40 Fietsservice kun je verschillende YOONIT-modellen bekijken en proberen. S40 is een werkplaats van fietsers voor fietsers, en die aandacht voor een goede afstelling geldt ook voor de fiets waarmee je elke dag rijdt. Wil je weten wat we verder doen? Lees dan [[waar je in Nijkerk terecht kunt als racefietser|racefietsenmaker-nijkerk]]." },
+      { tipo: "titoletto", testo: "Langskomen of een afspraak maken" },
+      { tipo: "paragrafo", testo: "Loop binnen tijdens de openingstijden: dinsdag tot en met vrijdag van 10:00 tot 18:00 uur en zaterdag van 10:00 tot 16:00 uur. Wil je zeker weten dat een model er staat, maak dan een afspraak via service@s40.nl of +31 6 26980438. Prijzen zijn op aanvraag." },
+      { tipo: "link", testo: "https://minicargobike.com/", etichetta: "Bekijk de modellen op minicargobike.com" },
+    ],
+    attivo: true,
+  },
   {
     id: "nieuws-suela-schouten",
     titolo: "S40 Fietsservice sponsort BMX-racer Suéla Schouten uit Nijkerk",

@@ -30,7 +30,8 @@
     "racefietsenmaker-nijkerk": "road-bike-specialist-nijkerk",
     "gravelbike-onderhoud-nijkerk": "gravel-bike-service-nijkerk",
     "bikefit-nijkerk": "bike-fit-nijkerk",
-    "nieuws-suela-schouten": "news-suela-schouten"
+    "nieuws-suela-schouten": "news-suela-schouten",
+    "yoonit-cargobikes-nijkerk": "yoonit-cargo-bikes-nijkerk"
   },
   "_comment2": "altSiteUrl and postAlternates feed hreflang links in the generated blog pages and sitemap.xml. postAlternates maps a post id of this repo to the id of the same article in the other language repo."
 }

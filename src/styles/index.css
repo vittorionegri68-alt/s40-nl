@@ -293,6 +293,8 @@ html.pager-on .dots { display: flex; }
 .reader__body h3 { font: 800 clamp(24px, 3vw, 30px) / 1.05 var(--font-display); text-transform: uppercase; margin: 34px 0 10px; }
 .reader__body figure { margin: 24px 0; }
 .reader__body figure img { width: 100%; border-radius: 2px; }
+.reader__body figure.fig-logo { margin: 18px 0 8px; }
+.reader__body figure.fig-logo img { display: inline-block; width: 150px; height: auto; box-sizing: content-box; background: #fff; padding: 10px 16px; }
 .reader__body figcaption { font-size: 14px; color: var(--ant-300); margin-top: 8px; }
 .reader .inline-link { color: var(--green-400); text-decoration: underline; text-decoration-color: rgba(143,183,143,.5); }
 .reader__also { margin-top: 40px; }
