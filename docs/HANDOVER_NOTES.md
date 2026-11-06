@@ -21,7 +21,7 @@ One-page site with eight blocks (hero, services, about us, workshop, questions, 
 5. **Team:** Michiel Frederiks is listed as shop assistant without a LinkedIn link or schedule. Confirm.
 6. **Links:** the Google Business Profile link and the WhatsApp number must be verified (see go-live checklist).
 7. **Elevation gain** values of the routes are estimates (73, 64, 314 and 322 m) and may differ per device. Confirm the route names.
-8. **GA4:** the real Measurement ID is set (one property shared by the NL and EN sites, cookieless). The ai-referral snippet is still to be added.
+8. **GA4:** the real Measurement ID is set (one property shared by the NL and EN sites, cookieless). The validated ai-referral snippet is installed (event `ai_referral`).
 9. **Privacy statement:** simple text, to be reviewed.
 10. **Hosting:** staging runs on a Vercel Hobby plan (non-commercial use). Production needs an appropriate plan.
 11. **Competitor and tone sections** of the content corpus (voice, forbidden words, real tone samples, competitors) are still open.
