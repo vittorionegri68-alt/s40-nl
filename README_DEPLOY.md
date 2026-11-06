@@ -55,7 +55,7 @@ Requires Node 18 or newer. `npm run build` does more than `vite build`. In order
 
 ## Go-live checklist (switching from staging to the final domain)
 
-- [ ] Replace the GA4 placeholder `G-TEST123` with the real Measurement ID in **two** places: `index.html` (the gtag script and the config call) and `site.config.json` (`gaId`, used for the generated blog pages).
+- [x] Done (2026-11-06): the real GA4 Measurement ID is set in **two** places, shared by the NL and EN sites. If it ever changes, update both: `index.html` (the gtag script and the config call) and `site.config.json` (`gaId`, used for the generated blog pages).
 - [ ] Paste the validated "ai-referral" GA4 snippet into `index.html` where the placeholder comment is (directly after the gtag block). It was not available when the site was generated and was deliberately not reconstructed.
 - [ ] Add the domain in Vercel (Settings, Domains) and point DNS: https://s40.nl.
 - [ ] Confirm the domain values everywhere: `siteUrl` and `altSiteUrl` in `site.config.json`, canonical and hreflang links in `index.html`, `public/robots.txt` (Sitemap line), `public/llms.txt`, `public/ai.txt`, `public/privacy.html` (canonical). Then run `npm run build`.
