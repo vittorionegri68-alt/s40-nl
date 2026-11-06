@@ -21,7 +21,7 @@
 //  - Internal links are root-relative (/post/slug.html) so they also work on
 //    staging URLs. Canonical, Open Graph and JSON-LD use the absolute siteUrl.
 //  - Page styling follows the S40 design system tokens (dark theme, Saira).
-//  - Block types: paragrafo, titoletto, link, download, immagine, logo.
+//  - Block types: paragrafo, titoletto, link, download, immagine, logo, emblema.
 //  - No em dash anywhere in generated text.
 // -----------------------------------------------------------------------------
 
@@ -109,6 +109,9 @@ function renderContentBlock(b, idToSlug) {
     return `      <figure><img src="${escapeAttr(b.testo)}" alt="${escapeAttr(b.etichetta || "")}" loading="lazy" />${
       b.etichetta ? `<figcaption>${escapeHtml(b.etichetta)}</figcaption>` : ""
     }</figure>`;
+  }
+  if (b.tipo === "emblema") {
+    return `      <figure class="fig-emblem"><img src="${escapeAttr(b.testo)}" alt="${escapeAttr(b.etichetta || "")}" width="345" height="533" loading="lazy" /></figure>`;
   }
   if (b.tipo === "logo") {
     return `      <figure class="fig-logo"><img src="${escapeAttr(b.testo)}" alt="${escapeAttr(b.etichetta || "")}" width="250" height="40" loading="lazy" /></figure>`;
@@ -240,6 +243,8 @@ ${renderAlternates(post, url)}
       figure img{display:block;width:100%;height:auto;border-radius:2px;}
       figure.fig-logo{margin:20px 0 4px;}
       figure.fig-logo img{display:inline-block;width:150px;height:auto;background:#fff;padding:10px 16px;box-sizing:content-box;}
+      figure.fig-emblem{margin:28px 0;}
+      figure.fig-emblem img{display:block;width:auto;height:260px;}
       figcaption{font-size:14px;color:var(--muted);margin-top:8px;}
       .btn-link{display:inline-block;color:var(--ink);background:var(--green);padding:12px 22px;font-family:"Saira Condensed",sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border-radius:2px;margin:4px 8px 4px 0;}
       .btn-link:hover{background:var(--green-400);}

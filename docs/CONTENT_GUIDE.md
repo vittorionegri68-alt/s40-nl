@@ -27,6 +27,7 @@ Open `src/data/posts.jsx`. **Add the new post at the start of the array (positio
     { tipo: "paragrafo", testo: "A paragraph. Link to another post like this: [[link label|other-post-id]]." },
     { tipo: "titoletto", testo: "A sub heading" },
     { tipo: "immagine", testo: "/assets/images/photo.webp", etichetta: "Alt text and caption" },
+    { tipo: "emblema", testo: "/assets/images/crest.png", etichetta: "Alt text" },   // transparent PNG emblem, shown at 260 px high
     { tipo: "logo", testo: "/assets/images/brand-logo.png", etichetta: "Brand name" },   // small logo on a light chip, no caption
     { tipo: "link", testo: "https://example.com", etichetta: "Button label" },
   ],

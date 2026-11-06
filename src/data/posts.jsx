@@ -10,6 +10,7 @@
 //     { tipo: "paragrafo", testo }            paragraph; use [[label|post-id]] for an internal link
 //     { tipo: "titoletto", testo }            sub heading
 //     { tipo: "immagine", testo: "/assets/images/x.webp", etichetta: "alt text and caption" }
+//     { tipo: "emblema", testo: "/assets/images/x.png", etichetta: "alt text" }   transparent crest/emblem, centred, no chip
 //     { tipo: "logo", testo: "/assets/images/x.png", etichetta: "alt text" }   small brand logo on a light chip, no caption
 //     { tipo: "link", testo: "https://...", etichetta: "button label" }
 //   attivo    true to publish, false to hide (build removes its static page)
@@ -18,6 +19,32 @@
 // "Read also" blocks are added automatically (the 2 most recent other posts); do not write them by hand.
 
 export const posts = [
+  {
+    id: "colossi-frames-nijkerk",
+    titolo: "Colossi frames: handgemaakt in Zeeland, met advies en montage bij S40 Fietsservice",
+    data: "2026-11-06",
+    categoria: "Blog",
+    sommario:
+      "Colossi bouwt handgemaakte Nederlandse fietsframes, naar jouw maat en wensen. S40 Fietsservice in Nijkerk werkt samen met Colossi en helpt bij de keuze van het frame en de montage van de complete fiets.",
+    contenuto: [
+      { tipo: "paragrafo", testo: "Niet elke fiets komt uit een fabriek. Sommige frames worden met de hand gebouwd, naar de maat en de wensen van de berijder. Colossi doet dat in Nederland, en S40 Fietsservice kent de bouwers goed." },
+      { tipo: "emblema", testo: "/assets/images/colossi-logo.png", etichetta: "Colossi, wapen met het jaartal 1982 en het motto Luctor et Emergo" },
+      { tipo: "titoletto", testo: "Wie is Colossi?" },
+      { tipo: "paragrafo", testo: "Colossi bouwt handgemaakte Nederlandse fietsframes. Oprichter Jan Kole was beroepsrenner en reed in de jaren zeventig en tachtig in Europa, onder meer voor Solahart-Herca en Femis Bank. Na zijn carrière bouwde hij maatframes voor fietsenwinkels in Nederland, België, Denemarken en het Verenigd Koninkrijk. Het wapen in het logo toont het jaartal 1982 en het motto Luctor et Emergo, dat ook het motto van Zeeland is." },
+      { tipo: "paragrafo", testo: "Na een periode met een werkplaats in Shenzhen, vanaf 2005, werkt Colossi sinds 2017 weer vanuit Zeeland. Jan Kole bouwt daar samen met zijn zoon Sander de maatwerkframes met de hand." },
+      { tipo: "titoletto", testo: "Wat maakt een Colossi bijzonder?" },
+      { tipo: "paragrafo", testo: "Je kiest zelf de geometrie en de buizen. Een frame kan gemoft (lugged), fillet brazed of TIG-gelast zijn, en staal is het favoriete materiaal van de bouwers. Colossi zegt een van de grootste voorraden Columbus-buizen te hebben en bijna alles te kunnen bouwen wat je kunt bedenken." },
+      { tipo: "paragrafo", testo: "In de collectie op de website van Colossi staan onder meer de modellen CRIT, STAB, Low Pro, LINER, Mondial Road, Mondial Track, Rambler Road, Rambler Track en Rambler CX, twee gravelframes (Gravel 1 en Gravel 2) en een 29'er." },
+      { tipo: "titoletto", testo: "Samen kiezen en bouwen" },
+      { tipo: "paragrafo", testo: "Omdat elk Colossi-frame individueel is, vraagt Colossi je eerst contact op te nemen, en zegt binnen 24 uur te reageren. S40 Fietsservice en Colossi werken samen en zijn bevriend. Denk je aan een Colossi-frame, dan kun je bij S40 terecht voor advies over de keuze: type, maat, geometrie en buizen, afgestemd op hoe jij rijdt. Is het frame er, dan monteren we de complete fiets voor je." },
+      { tipo: "titoletto", testo: "Van frame naar complete fiets" },
+      { tipo: "paragrafo", testo: "Een frame is nog geen fiets. Bij S40 Fietsservice bouwen we fietsen op maat en monteren we fietsen, nieuw en tweedehands. Een goede maat is het begin, en daar helpt een bikefit bij. Lees meer over [[wat een bikefit is|bikefit-nijkerk]]." },
+      { tipo: "titoletto", testo: "Langskomen of een afspraak maken" },
+      { tipo: "paragrafo", testo: "Loop binnen tijdens de openingstijden: dinsdag tot en met vrijdag van 10:00 tot 18:00 uur en zaterdag van 10:00 tot 16:00 uur. Voor een gesprek over een frame is een afspraak handig, via service@s40.nl of +31 6 26980438. Prijzen zijn op aanvraag." },
+      { tipo: "link", testo: "https://www.colossiv5.com/", etichetta: "Bekijk de frames op colossiv5.com" },
+    ],
+    attivo: true,
+  },
   {
     id: "yoonit-cargobikes-nijkerk",
     titolo: "YOONIT cargobikes in Nijkerk: bekijk en probeer ze bij S40 Fietsservice",

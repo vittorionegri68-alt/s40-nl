@@ -58,6 +58,12 @@ function Article({ post, onClose, onOpenOther }) {
                 {b.etichetta ? <figcaption>{b.etichetta}</figcaption> : null}
               </figure>
             );
+          if (b.tipo === "emblema")
+            return (
+              <figure key={i} className="fig-emblem">
+                <img src={b.testo} alt={b.etichetta || ""} width="345" height="533" loading="lazy" />
+              </figure>
+            );
           if (b.tipo === "logo")
             return (
               <figure key={i} className="fig-logo">
