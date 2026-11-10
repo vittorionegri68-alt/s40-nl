@@ -156,10 +156,28 @@ function renderAlternates(post, url) {
     .join("\n");
 }
 
+// Author of every post: the person set in site.config.json ("author"). Falls back to the organisation.
+// The @id matches the Person node of the homepage graph, so engines link both to one entity.
+function authorNode() {
+  const a = CFG.author;
+  if (!a) return { "@type": "Organization", name: BRAND, url: SITE_URL };
+  return {
+    "@type": "Person",
+    "@id": `${SITE_URL}/#wojtek`,
+    name: a.name,
+    alternateName: a.alternateName,
+    jobTitle: a.jobTitle,
+    worksFor: { "@type": "Organization", name: BRAND, url: SITE_URL },
+    sameAs: a.sameAs,
+  };
+}
+
 function renderPage(post, idToSlug, ordered) {
   const url = `${SITE_URL}/post/${post.slug}.html`;
-  const title = `${post.titolo} | ${BRAND}`;
-  const description = post.sommario;
+  // Optional SEO fields: metaTitolo (full <title>, about 60 characters) and metaDescrizione (about 155 characters).
+  // Fallbacks keep older posts working: title + brand, and the summary.
+  const title = post.metaTitolo || `${post.titolo} | ${BRAND}`;
+  const description = post.metaDescrizione || post.sommario;
   const dateIso = new Date(post.data).toISOString();
 
   const bodyBlocks = post.contenuto.map((b) => renderContentBlock(b, idToSlug)).filter(Boolean).join("\n");
@@ -174,7 +192,8 @@ function renderPage(post, idToSlug, ordered) {
     dateModified: post.data,
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    author: { "@type": "Organization", name: BRAND, url: SITE_URL },
+    image: [`${SITE_URL}/og-image.jpg`],
+    author: authorNode(),
     publisher: { "@type": "Organization", name: BRAND, url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` } },
   };
   const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, "\\u003c");
@@ -282,7 +301,8 @@ ${renderAlternates(post, url)}
       .share-btn{background:transparent;border:2px solid var(--green);color:var(--green-400);font:inherit;padding:8px 18px;cursor:pointer;border-radius:2px;min-height:44px;transition:background .12s var(--ease),color .12s var(--ease);}
       .share-btn:hover{background:var(--green);color:var(--ink);}
       .cat{display:inline-block;font-family:"Saira Condensed",sans-serif;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-400);border:1px solid var(--green);padding:3px 10px;margin-right:12px;border-radius:2px;}
-      time{font-size:14px;color:var(--muted);}
+      time,.byline{font-size:14px;color:var(--muted);}
+      .byline::before{content:"\\00b7";margin:0 8px;}
       h1{font-family:"Saira Condensed",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(36px,6vw,60px);line-height:.98;letter-spacing:.005em;margin:18px 0 16px;}
       .sommario{font-size:19px;line-height:1.55;color:var(--green-300);padding-bottom:28px;margin-bottom:12px;border-bottom:1px solid var(--line);}
       h2{font-family:"Saira Condensed",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(26px,3.4vw,32px);line-height:1.05;letter-spacing:.01em;margin:40px 0 12px;}
@@ -321,7 +341,7 @@ ${renderAlternates(post, url)}
       </div>
       <article>
       <span class="cat">${escapeHtml(post.categoria)}</span>
-      <time datetime="${escapeAttr(post.data)}">${escapeHtml(formatDate(post.data))}</time>
+      <time datetime="${escapeAttr(post.data)}">${escapeHtml(formatDate(post.data))}</time>${CFG.author && UI.byline ? `\n      <span class="byline">${escapeHtml(UI.byline)}</span>` : ""}
       <h1>${escapeHtml(post.titolo)}</h1>
       <p class="sommario">${escapeHtml(post.sommario)}</p>
 ${bodyBlocks}

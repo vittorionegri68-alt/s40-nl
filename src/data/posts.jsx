@@ -5,7 +5,9 @@
 //   titolo    title (visible, accents allowed)
 //   data      publication date YYYY-MM-DD
 //   categoria "Blog" or "Nieuws"
-//   sommario  2-3 sentence summary (used as meta description)
+//   sommario  2-3 sentence summary (visible under the title; fallback meta description)
+//   metaTitolo       optional full <title> of the static page, max 60 characters (fallback: titolo + brand)
+//   metaDescrizione  optional meta description, max 160 characters (fallback: sommario)
 //   contenuto array of blocks:
 //     { tipo: "paragrafo", testo }            paragraph; use [[label|post-id]] for an internal link
 //     { tipo: "titoletto", testo }            sub heading
@@ -21,6 +23,8 @@
 export const posts = [
   {
     id: "colossi-frames-nijkerk",
+    metaTitolo: "Colossi frames in Nijkerk | S40 Fietsservice",
+    metaDescrizione: "Colossi bouwt handgemaakte Nederlandse fietsframes op maat. S40 Fietsservice in Nijkerk helpt bij de keuze van het frame en de montage van je fiets.",
     titolo: "Colossi frames: handgemaakt in Zeeland, met advies en montage bij S40 Fietsservice",
     data: "2026-11-06",
     categoria: "Blog",
@@ -47,6 +51,8 @@ export const posts = [
   },
   {
     id: "yoonit-cargobikes-nijkerk",
+    metaTitolo: "YOONIT cargobikes in Nijkerk | S40 Fietsservice",
+    metaDescrizione: "YOONIT bouwt compacte cargobikes in Hamburg. S40 Fietsservice in Nijkerk is officieel dealer: bekijk en probeer verschillende modellen.",
     titolo: "YOONIT cargobikes in Nijkerk: bekijk en probeer ze bij S40 Fietsservice",
     data: "2026-11-05",
     categoria: "Blog",
@@ -76,6 +82,8 @@ export const posts = [
   },
   {
     id: "nieuws-suela-schouten",
+    metaTitolo: "BMX-racer Suéla Schouten uit Nijkerk | S40 Fietsservice",
+    metaDescrizione: "Suéla Schouten uit Nijkerk werd in 2025 wereldkampioene BMX (Women 30-39). S40 Fietsservice sponsort haar en houdt haar fiets rijklaar.",
     titolo: "S40 Fietsservice sponsort BMX-racer Suéla Schouten uit Nijkerk",
     data: "2026-11-03",
     categoria: "Nieuws",
@@ -97,6 +105,8 @@ export const posts = [
   },
   {
     id: "bikefit-nijkerk",
+    metaTitolo: "Wat is een bikefit bij Nijkerk? | S40 Fietsservice",
+    metaDescrizione: "Een bikefit stemt je fiets af op je lichaam en je doelen. Lees wat het is, wanneer het zinvol is en waar je terecht kunt bij Nijkerk.",
     titolo: "Wat is een bikefit en waar laat je die doen bij Nijkerk?",
     data: "2026-11-03",
     categoria: "Blog",
@@ -123,6 +133,8 @@ export const posts = [
   },
   {
     id: "gravelbike-onderhoud-nijkerk",
+    metaTitolo: "Gravelbike onderhoud in Nijkerk | S40 Fietsservice",
+    metaDescrizione: "Een gravelbike maakt meer vuil, zand en water mee dan een racefiets. Lees waar je op moet letten en waar je in Nijkerk terecht kunt.",
     titolo: "Gravelbike onderhouden of laten repareren in Nijkerk: wat je moet weten",
     data: "2026-11-03",
     categoria: "Blog",
@@ -147,6 +159,8 @@ export const posts = [
   },
   {
     id: "racefietsenmaker-nijkerk",
+    metaTitolo: "Racefietsenmaker in Nijkerk | S40 Fietsservice",
+    metaDescrizione: "Wie in of rond Nijkerk een racefiets heeft, wil een werkplaats die snapt wat je vraagt. Dit mag je verwachten van een racefietsenmaker met UCI-ervaring.",
     titolo: "Racefietsenmaker in Nijkerk: waar je fiets in goede handen is",
     data: "2026-11-03",
     categoria: "Blog",
