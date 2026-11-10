@@ -22,18 +22,18 @@ npm run preview    # serve the production build locally
 Requires Node 18 or newer. `npm run build` does more than `vite build`. In order it:
 
 1. `scripts/generate-routes.mjs`: reads `public/routes/*.gpx`, writes `src/data/routes.generated.json` (distance, elevation gain, SVG path, elevation profile).
-2. `generate-geo-static.mjs`: writes the FAQPage JSON-LD and the static `<noscript>` content into `index.html`, and builds `public/sitemap.xml`. All from `src/data/qanda.jsx` and `src/config/copy.js`.
+2. `generate-geo-static.mjs`: writes the FAQPage node into the unified JSON-LD `@graph` and the static `<noscript>` content into `index.html`, and builds `public/sitemap.xml`. All from `src/data/qanda.jsx` and `src/config/copy.js`.
 3. `generate-blog-noscript.mjs`: writes the blog posts into the static `<noscript>` block of `index.html`.
 4. `generate-blog-pages.mjs`: writes one static HTML page per post into `public/post/`.
 5. `vite build`.
 
-**Never edit the content between the `GEO-FAQ`, `GEO-STATIC` and `BLOG-STATIC` markers in `index.html` by hand.** It is regenerated on every build.
+**Never edit the content between the `GEO-STATIC` and `BLOG-STATIC` markers in `index.html` by hand, and never the FAQPage node inside the `GEO-SCHEMA` block.** It is regenerated on every build.
 
 ## What is in the repository
 
 | Path | Purpose |
 |---|---|
-| `index.html` | Head metadata, JSON-LD (WebSite, Person x2, BreadcrumbList, BicycleStore), GA4, generated static content |
+| `index.html` | Head metadata, one unified JSON-LD `@graph` (WebSite, WebPage, BicycleStore, Person x2, BreadcrumbList, FAQPage), GA4, generated static content |
 | `site.config.json` | Single source of truth for the build scripts: language, domain, GA4 id, hreflang partner, blog UI strings |
 | `src/config/copy.js` | **All visible interface text.** Edit wording here |
 | `src/config/contact_info.js` | Phone, email, opening hours, KvK, VAT, social links, team members |

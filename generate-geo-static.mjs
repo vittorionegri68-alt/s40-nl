@@ -3,7 +3,7 @@
 //
 // Keeps the crawler-readable (no JavaScript) parts of index.html in sync with the
 // single source of truth, so the 10 validated questions stay IDENTICAL everywhere:
-//   1. FAQPage JSON-LD in <head>          (markers GEO-FAQ-START / GEO-FAQ-END)
+//   1. FAQPage node inside the single JSON-LD @graph in <head>  (markers GEO-SCHEMA-START / GEO-SCHEMA-END)
 //   2. the static <noscript> page content (markers GEO-STATIC-START / GEO-STATIC-END)
 //      built from src/config/copy.js, src/config/contact_info.js, src/data/qanda.jsx,
 //      src/data/routes.meta.js and src/data/routes.generated.json.
@@ -43,6 +43,22 @@ function replaceBetween(html, startMarker, endMarker, content) {
   return html.slice(0, startEnd) + "\n" + content + "\n" + indent + html.slice(b);
 }
 
+// Replaces (or adds) the FAQPage node inside the single JSON-LD @graph between the GEO-SCHEMA markers.
+function upsertFaqInGraph(html, faqNode) {
+  const a = html.indexOf("<!-- GEO-SCHEMA-START");
+  const b = html.indexOf("<!-- GEO-SCHEMA-END");
+  if (a === -1 || b === -1) throw new Error("generate-geo-static: GEO-SCHEMA markers not found in index.html");
+  const open = '<script type="application/ld+json">';
+  const s0 = html.indexOf(open, a);
+  const s1 = html.indexOf("</script>", s0);
+  if (s0 === -1 || s1 === -1 || s0 > b) throw new Error("generate-geo-static: JSON-LD script not found between GEO-SCHEMA markers");
+  const doc = JSON.parse(html.slice(s0 + open.length, s1));
+  if (!Array.isArray(doc["@graph"])) throw new Error("generate-geo-static: expected a single @graph in the JSON-LD block");
+  doc["@graph"] = doc["@graph"].filter((n) => n["@type"] !== "FAQPage").concat([faqNode]);
+  const json = JSON.stringify(doc).replace(/</g, "\\u003c");
+  return html.slice(0, s0 + open.length) + json + html.slice(s1);
+}
+
 async function main() {
   const { copy } = await import(pathToFileURL(join(ROOT, "src", "config", "copy.js")).href);
   const { contact } = await import(pathToFileURL(join(ROOT, "src", "config", "contact_info.js")).href);
@@ -50,14 +66,15 @@ async function main() {
   const { qanda } = await importJsx("src/data/qanda.jsx");
   const routes = JSON.parse(readFileSync(join(ROOT, "src", "data", "routes.generated.json"), "utf8"));
 
-  // 1. FAQPage JSON-LD
-  const faq = {
-    "@context": "https://schema.org",
+  // 1. FAQPage node of the unified @graph (the other entities are hand-written in index.html)
+  const faqNode = {
     "@type": "FAQPage",
+    "@id": `${CFG.siteUrl}/#faq`,
     inLanguage: CFG.lang,
+    about: { "@id": `${CFG.siteUrl}/#business` },
+    isPartOf: { "@id": `${CFG.siteUrl}/#webpage` },
     mainEntity: qanda.map((x) => ({ "@type": "Question", name: x.q, acceptedAnswer: { "@type": "Answer", text: x.a } })),
   };
-  const faqScript = `    <script type="application/ld+json">${JSON.stringify(faq).replace(/</g, "\\u003c")}</script>`;
 
   // 2. noscript static content
   const L = [];
@@ -127,10 +144,10 @@ async function main() {
   L.push(`          <p>${esc(copy.footer.kvk)}: ${esc(contact.kvk)}. ${esc(copy.footer.btw)}: ${esc(contact.btw)}. <a href="/privacy.html">${esc(copy.footer.privacy)}</a></p>`);
 
   let html = readFileSync(INDEX_PATH, "utf8");
-  html = replaceBetween(html, "<!-- GEO-FAQ-START", "<!-- GEO-FAQ-END", faqScript);
+  html = upsertFaqInGraph(html, faqNode);
   html = replaceBetween(html, "<!-- GEO-STATIC-START", "<!-- GEO-STATIC-END", L.join("\n"));
   writeFileSync(INDEX_PATH, html, "utf8");
-  console.log(`generate-geo-static: FAQPage (${qanda.length} questions) and noscript content written to index.html`);
+  console.log(`generate-geo-static: FAQPage node (${qanda.length} questions) and noscript content written to index.html`);
 
   // 3. sitemap.xml (no changefreq / priority, hreflang for every URL that has a translation)
   const { posts } = await importJsx("src/data/posts.jsx");
