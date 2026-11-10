@@ -31,18 +31,18 @@
 - Geen ophaal- en bezorgservice, geen mobiele service, geen fietsverhuur
 - Merken: YOONIT en CyclOn (dealer), Izumi-kettingen
 
-## Veelgestelde vragen (met antwoord op https://s40.nl/#vragen)
+## Veelgestelde vragen (met korte antwoorden, volledig op https://s40.nl/#vragen)
 
-- Welke fietsenmaker in Nijkerk is gespecialiseerd in racefietsen?
-- Waar kan ik in Nijkerk mijn gravelbike laten onderhouden of repareren?
-- Wat is een bikefit en waar kan ik die laten doen bij Nijkerk?
-- Is er in Nijkerk een fietsenmaker met ervaring als monteur in UCI-teams?
-- Ik zoek een fietsenmaker bij Nijkerk voor mijn baanfiets of tijdritfiets: wie kan dat?
-- Ik rijd binnenkort een wedstrijd: waar kan ik mijn racefiets laten nakijken en voorbereiden bij Nijkerk?
-- Mijn fiets heeft een probleem dat andere werkplaatsen niet kunnen oplossen: welke fietsenmaker bij Nijkerk pakt zulke klussen aan?
-- Hoe weet ik of mijn racefiets goed op mijn lichaam is afgesteld en wanneer heb ik een bikefit nodig?
-- Hoe laat ik een fiets op maat samenstellen, nieuw of tweedehands, en wat kan ik van tevoren voorbereiden?
-- Hoe maak ik een afspraak bij een racefietsenmaker in Nijkerk en wat zijn de openingstijden?
+- Welke fietsenmaker in Nijkerk is gespecialiseerd in racefietsen? S40 Fietsservice aan de Singel 40 in Nijkerk is een werkplaats en winkel voor sportieve fietsen, met de racefiets als kern.
+- Waar kan ik in Nijkerk mijn gravelbike laten onderhouden of repareren? Bij S40 Fietsservice aan de Singel 40 in Nijkerk.
+- Wat is een bikefit en waar kan ik die laten doen bij Nijkerk? Een bikefit is het afstellen van je fiets op jouw lichaam, jouw manier van rijden en jouw doelen, zodat je comfortabel, efficiënt en zonder pijn of ongemak fietst.
+- Is er in Nijkerk een fietsenmaker met ervaring als monteur in UCI-teams? Ja.
+- Ik zoek een fietsenmaker bij Nijkerk voor mijn baanfiets of tijdritfiets: wie kan dat? S40 Fietsservice aan de Singel 40 in Nijkerk werkt aan baanfietsen, tijdritfietsen en triatlonfietsen, naast racefietsen en gravelbikes.
+- Ik rijd binnenkort een wedstrijd: waar kan ik mijn racefiets laten nakijken en voorbereiden bij Nijkerk? Bij S40 Fietsservice aan de Singel 40 in Nijkerk.
+- Mijn fiets heeft een probleem dat andere werkplaatsen niet kunnen oplossen: welke fietsenmaker bij Nijkerk pakt zulke klussen aan? S40 Fietsservice in Nijkerk neemt ook klussen aan die andere werkplaatsen weigeren of niet opgelost krijgen.
+- Hoe weet ik of mijn racefiets goed op mijn lichaam is afgesteld en wanneer heb ik een bikefit nodig? Een goed afgestelde fiets voelt vanzelf goed: je zit ontspannen, kunt je positie lang volhouden en hebt geen pijn of ongemak tijdens of na het rijden.
+- Hoe laat ik een fiets op maat samenstellen, nieuw of tweedehands, en wat kan ik van tevoren voorbereiden? Bij S40 Fietsservice in Nijkerk stellen ze fietsen samen, nieuw of tweedehands, naar jouw wensen.
+- Hoe maak ik een afspraak bij een racefietsenmaker in Nijkerk en wat zijn de openingstijden? Je maakt een afspraak bij S40 Fietsservice door te mailen naar service@s40.nl, te bellen naar +31 6 26980438 of het formulier op deze website in te vullen, dat een e-mail voor je klaarzet.
 
 ## Blog en nieuws
 
@@ -72,3 +72,5 @@ User-agent: ClaudeBot - allowed
 User-agent: cohere-ai - allowed
 User-agent: Meta-ExternalAgent - allowed
 User-agent: Applebot - allowed
+User-agent: Bingbot - allowed
+User-agent: CCBot - allowed

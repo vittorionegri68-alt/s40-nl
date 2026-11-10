@@ -168,6 +168,7 @@ function authorNode() {
     alternateName: a.alternateName,
     jobTitle: a.jobTitle,
     worksFor: { "@type": "Organization", name: BRAND, url: SITE_URL },
+    knowsAbout: a.knowsAbout,
     sameAs: a.sameAs,
   };
 }
@@ -196,6 +197,17 @@ function renderPage(post, idToSlug, ordered) {
     author: authorNode(),
     publisher: { "@type": "Organization", name: BRAND, url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` } },
   };
+  // Breadcrumb trail: home > blog section > this article
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: `${BRAND} ${CFG.city}`, item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: UI.breadcrumbBlog, item: `${SITE_URL}${UI.backHref}` },
+      { "@type": "ListItem", position: 3, name: post.titolo, item: url },
+    ],
+  };
+  const breadcrumbStr = JSON.stringify(breadcrumb).replace(/</g, "\\u003c");
   const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, "\\u003c");
 
   return `<!doctype html>
@@ -224,6 +236,7 @@ ${renderAlternates(post, url)}
     <meta name="twitter:image" content="${SITE_URL}/og-image.jpg" />
 
     <script type="application/ld+json">${jsonLdStr}</script>
+    <script type="application/ld+json">${breadcrumbStr}</script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=${CFG.gaId}"></script>
     <script>
