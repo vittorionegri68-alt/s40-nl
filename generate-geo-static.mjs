@@ -71,7 +71,7 @@ async function main() {
     "@type": "FAQPage",
     "@id": `${CFG.siteUrl}/#faq`,
     inLanguage: CFG.lang,
-    about: { "@id": `${CFG.siteUrl}/#business` },
+    about: { "@id": `${CFG.entityUrl || CFG.siteUrl}/#business` },
     isPartOf: { "@id": `${CFG.siteUrl}/#webpage` },
     mainEntity: qanda.map((x) => ({ "@type": "Question", name: x.q, acceptedAnswer: { "@type": "Answer", text: x.a } })),
   };

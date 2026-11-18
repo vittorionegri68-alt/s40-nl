@@ -5,6 +5,8 @@
   "lang": "nl",
   "locale": "nl-NL",
   "siteUrl": "https://s40.nl",
+  "_entityUrlComment": "Base for the @id of the real-world entities (business and people). Identical in the NL and EN repositories on purpose: s40.nl and en.s40.nl describe one workshop and one pair of owners, so those nodes must share one @id. Page-level nodes keep siteUrl.",
+  "entityUrl": "https://s40.nl",
   "instagramUrl": "https://www.instagram.com/s40service/",
   "ui": {
     "back": "Terug naar S40 Fietsservice",

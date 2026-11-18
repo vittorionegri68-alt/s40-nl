@@ -102,7 +102,11 @@
   </head>
   <body>
     <time datetime="2026-11-03" hidden>2026-11-03</time>
-    <div id="root"></div>
+    <!-- Static H1 and opening paragraph: mirror the sr-only pair rendered by src/sections/Hero.jsx
+         (copy.hero.h1 / copy.hero.sr). Crawlers that do not execute JavaScript, Bing's included,
+         would otherwise find no H1 at all. createRoot() clears these children on mount, so the
+         rendered DOM keeps exactly one H1 and nothing changes visually. Keep in sync with copy.js. -->
+    <div id="root"><h1 class="sr-only">S40 Fietsservice Nijkerk, racefietsenmaker</h1><p class="sr-only">Werkplaats en winkel voor racefietsen, gravelbikes, BMX, baanfietsen en triatlonfietsen aan de Singel 40 in Nijkerk.</p></div>
     <noscript>
       <main>
         <article>

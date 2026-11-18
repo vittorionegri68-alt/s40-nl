@@ -36,6 +36,10 @@ const POSTS_PATH = join(ROOT, "src", "data", "posts.jsx");
 const OUT_DIR = join(ROOT, "public", "post");
 
 const SITE_URL = CFG.siteUrl;
+// Base for the @id of real-world entities (the workshop and its people). The NL and EN sites
+// are two hosts describing ONE business and ONE pair of owners, so those @id must be identical
+// on both, while page-level nodes (WebPage, Article, BreadcrumbList) keep their own host.
+const ENTITY_URL = CFG.entityUrl || CFG.siteUrl;
 const BRAND = CFG.brand;
 const UI = CFG.ui;
 
@@ -163,11 +167,11 @@ function authorNode() {
   if (!a) return { "@type": "Organization", name: BRAND, url: SITE_URL };
   return {
     "@type": "Person",
-    "@id": `${SITE_URL}/#wojtek`,
+    "@id": `${ENTITY_URL}/#wojtek`,
     name: a.name,
     alternateName: a.alternateName,
     jobTitle: a.jobTitle,
-    worksFor: { "@type": "Organization", name: BRAND, url: SITE_URL },
+    worksFor: { "@id": `${ENTITY_URL}/#business` },
     knowsAbout: a.knowsAbout,
     sameAs: a.sameAs,
   };
@@ -199,7 +203,7 @@ function renderPage(post, idToSlug, ordered) {
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         image: [`${SITE_URL}/og-image.jpg`],
         author: authorNode(),
-        publisher: { "@type": "Organization", name: BRAND, url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` } },
+        publisher: { "@type": "Organization", "@id": `${ENTITY_URL}/#business`, name: BRAND, url: `${ENTITY_URL}/`, logo: { "@type": "ImageObject", url: `${ENTITY_URL}/assets/s40-monogram-green.svg` } },
       },
       {
         "@type": "BreadcrumbList",
