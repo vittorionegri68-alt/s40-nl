@@ -172,7 +172,7 @@ async function main() {
     const hl = altId ? "\n" + links(loc, `${alt}/post/${slugify(altId)}.html`) : "";
     urls.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${p.data}</lastmod>${hl}\n  </url>`);
   }
-  urls.push(`  <url>\n    <loc>${self}/privacy.html</loc>\n    <lastmod>${CFG.contentUpdated}</lastmod>\n  </url>`);
+  urls.push(`  <url>\n    <loc>${self}/privacy.html</loc>\n    <lastmod>${CFG.contentUpdated}</lastmod>\n${links(self + "/privacy.html", alt + "/privacy.html")}\n  </url>`);
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join("\n")}\n</urlset>\n`;
   writeFileSync(join(ROOT, "public", "sitemap.xml"), xml, "utf8");
   console.log(`generate-geo-static: sitemap.xml written (${urls.length} URLs)`);
