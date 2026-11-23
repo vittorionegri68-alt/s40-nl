@@ -40,13 +40,25 @@
 
     <!-- GA4 cookieless: no cookies, no banner needed. The Measurement ID is set here AND in
          site.config.json ("gaId"), which feeds the generated blog pages. Both sites share one property. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8VT8BE99N"></script>
+    <!-- GA4 senza cookie: Consent Mode v2 con analytics_storage negato.
+         Il blocco consent deve restare PRIMA del caricamento di gtag.js:
+         se viene dopo, gtag.js parte con lo stato predefinito e scrive
+         i cookie _ga e _ga_J8VT8BE99N. client_storage e anonymize_ip erano
+         parametri di Universal Analytics, GA4 li ignora: non reintrodurli. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
       gtag('js', new Date());
-      gtag('config', 'G-J8VT8BE99N', { anonymize_ip: true, client_storage: 'none' });
+      gtag('config', 'G-J8VT8BE99N');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8VT8BE99N"></script>
+
     <!-- AI referral tracking: registra le visite arrivate da assistenti AI come evento GA4 -->
     <script>
     (function () {

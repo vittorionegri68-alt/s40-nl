@@ -245,13 +245,24 @@ ${renderAlternates(post, url)}
 
     <script type="application/ld+json">${jsonLdStr}</script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=${CFG.gaId}"></script>
+    <!-- GA4 senza cookie: Consent Mode v2 con analytics_storage negato.
+         Il consent deve restare PRIMA del caricamento di gtag.js, altrimenti
+         gtag.js parte con lo stato predefinito e scrive i cookie _ga e _ga_<ID>.
+         client_storage e anonymize_ip erano parametri di Universal Analytics,
+         GA4 li ignora: non reintrodurli. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
       gtag('js', new Date());
-      gtag('config', '${CFG.gaId}', { anonymize_ip: true, client_storage: 'none' });
+      gtag('config', '${CFG.gaId}');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${CFG.gaId}"></script>
     <!-- AI referral tracking: registra le visite arrivate da assistenti AI come evento GA4 -->
     <script>
     (function () {
