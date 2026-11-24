@@ -1,40 +1,41 @@
 # Tells IndexNow (Bing, Yandex, Seznam, Naver; not Google) that content changed.
-# Fires on deployment_status, not on push, so the crawler never arrives while the
-# previous build is still the one being served.
+#
+# On the other eight domains this fires on deployment_status, so it never points a
+# crawler at a build that is not live yet. These two repos do not emit that event:
+# on 24/11/2026 the GitHub deployments API was empty for both and no run was ever
+# queued. The trigger is kept in case the Vercel integration starts sending it, and
+# push is the one that actually works here, with a wait so the deploy lands first.
+# workflow_dispatch allows a manual run after a content change made outside a push.
 name: IndexNow
 
 on:
   deployment_status:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'public/**'
+      - 'src/data/**'
+      - 'src/config/**'
 
 jobs:
   notify:
-    if: github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'Production'
+    if: github.event_name != 'deployment_status' || github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - name: Skip when the commit touched no content
-        id: gate
-        run: |
-          CHANGED=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || echo "")
-          echo "$CHANGED"
-          if echo "$CHANGED" | grep -qE '^(index\.html|public/|src/data/|src/config/)'; then
-            echo "run=true" >> $GITHUB_OUTPUT
-          else
-            echo "run=false" >> $GITHUB_OUTPUT
-          fi
+      - name: Give the deploy time to go live
+        if: github.event_name == 'push'
+        run: sleep 90
 
       - name: Submit the sitemap URLs to IndexNow
-        if: steps.gate.outputs.run == 'true'
         run: |
           HOST="https://s40.nl"
           KEY="e3e4dcddad16ebc9ccf8508b20b95082"
           URLS=$(curl -sS --max-time 20 "$HOST/sitemap.xml" | grep -oE '<loc>[^<]+</loc>' | sed -e 's/<loc>//' -e 's|</loc>||')
           COUNT=$(echo "$URLS" | grep -c . || true)
           echo "URL da segnalare: $COUNT"
-          [ "$COUNT" -eq 0 ] && { echo "sitemap vuota o irraggiungibile, esco senza errore"; exit 0; }
+          if [ "$COUNT" -eq 0 ]; then echo "sitemap vuota o irraggiungibile, esco senza errore"; exit 0; fi
           LIST=$(echo "$URLS" | sed 's/.*/"&"/' | paste -sd, -)
           BODY="{\"host\":\"${HOST#https://}\",\"key\":\"$KEY\",\"keyLocation\":\"$HOST/$KEY.txt\",\"urlList\":[$LIST]}"
           CODE=$(curl -sS -o /tmp/out.txt -w '%{http_code}' -X POST "https://api.indexnow.org/IndexNow" \
