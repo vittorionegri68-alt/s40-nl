@@ -136,12 +136,20 @@ export default function News() {
           <ul className="posts">
             {active.map((p, i) => (
               <li key={p.id} className="post reveal" style={{ transitionDelay: `${i * 50}ms` }}>
-                <button type="button" onClick={(e) => open(p.id, e.currentTarget)} aria-label={`${c.read}: ${p.titolo}`}>
+                {/* Real <a href> on purpose: a card that only has onClick produces no href in the
+                    rendered DOM, so the article is unreachable for any crawler that renders the
+                    page, and for anyone middle-clicking it. preventDefault keeps the in-page
+                    reader; the href is the same static page the pre-render block links to. */}
+                <a
+                  href={`/post/${slugify(p.id)}.html`}
+                  onClick={(e) => { e.preventDefault(); open(p.id, e.currentTarget); }}
+                  aria-label={`${c.read}: ${p.titolo}`}
+                >
                   <span className="post__meta"><span className="tag">{p.categoria}</span> <time dateTime={p.data}>{fmt(p.data)}</time></span>
                   <span className="post__title">{p.titolo}</span>
                   <span className="post__sum">{p.sommario}</span>
                   <span className="post__more">{c.read} <Icon name="arrow-right" size={18} strokeWidth={2.6} /></span>
-                </button>
+                </a>
               </li>
             ))}
           </ul>

@@ -259,8 +259,8 @@ html.pager-on .dots { display: flex; }
 /* News */
 .news { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: start; }
 .posts { display: grid; gap: 12px; }
-.post button { display: grid; gap: 6px; width: 100%; text-align: left; background: #fff; border: 1px solid var(--ant-100); border-left: 5px solid var(--ant-700); border-radius: 2px; padding: 16px 18px; cursor: pointer; color: var(--ant-700); transition: border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
-.post button:hover { border-left-color: var(--green-500); box-shadow: var(--shadow-light); }
+.post > a { display: grid; text-decoration: none; gap: 6px; width: 100%; text-align: left; background: #fff; border: 1px solid var(--ant-100); border-left: 5px solid var(--ant-700); border-radius: 2px; padding: 16px 18px; cursor: pointer; color: var(--ant-700); transition: border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+.post > a:hover { border-left-color: var(--green-500); box-shadow: var(--shadow-light); }
 .post__meta { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ant-400); }
 .post__title { font: 800 24px / 1.05 var(--font-display); text-transform: uppercase; }
 .post__sum { font-size: 15px; color: var(--ant-500); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
