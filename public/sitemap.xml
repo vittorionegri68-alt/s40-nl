@@ -3,10 +3,17 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://s40.nl/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <xhtml:link rel="alternate" hreflang="nl" href="https://s40.nl/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://en.s40.nl/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://s40.nl/" />
+  </url>
+  <url>
+    <loc>https://s40.nl/post/wedstrijdvoorbereiding-racefiets-nijkerk.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://s40.nl/post/wedstrijdvoorbereiding-racefiets-nijkerk.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://en.s40.nl/post/race-preparation-road-bike-nijkerk.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://s40.nl/post/wedstrijdvoorbereiding-racefiets-nijkerk.html" />
   </url>
   <url>
     <loc>https://s40.nl/post/colossi-frames-nijkerk.html</loc>
