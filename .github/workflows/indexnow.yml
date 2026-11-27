@@ -20,7 +20,32 @@ on:
       - 'src/config/**'
 
 jobs:
+  controlla:
+    if: github.event_name != 'deployment_status' || github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lascia il tempo al deploy di andare online
+        if: github.event_name == 'push'
+        run: sleep 90
+
+      - name: Checkout del commit deployato
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha || github.sha }}
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Controlla che il sito sia indicizzabile
+        env:
+          SITE_URL: https://s40.nl
+        run: node .github/scripts/check-indexability.mjs
+
+
   notify:
+    needs: controlla
     if: github.event_name != 'deployment_status' || github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
