@@ -39,7 +39,7 @@
     "colossi-frames-nijkerk": "colossi-frames-advice-nijkerk",
     "wedstrijdvoorbereiding-racefiets-nijkerk": "race-preparation-road-bike-nijkerk"
   },
-  "_comment2": "altSiteUrl and postAlternates feed hreflang links in the generated blog pages and sitemap.xml. postAlternates maps a post id of this repo to the id of the same article in the other language repo.",
+  "_comment2": "altSiteUrl and postAlternates feed hreflang links in the generated blog pages and sitemap.xml. postAlternates maps a post id of this repo to the id of the same article in the other language repo. Every new post needs its pair added here AND the reverse pair in the other repository, in the same change: a post missing from this map is published with no hreflang at all, and nothing else in the repositories connects the two ids.",
   "author": {
     "name": "Wojciech Krenski",
     "alternateName": "Wojtek",

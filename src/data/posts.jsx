@@ -19,6 +19,14 @@
 //
 // This file must contain plain JavaScript objects only (no JSX): the build scripts import it as an ES module.
 // "Read also" blocks are added automatically (the 2 most recent other posts); do not write them by hand.
+//
+// ADDING A POST TAKES A SECOND EDIT, IN BOTH REPOSITORIES.
+// Add the pair of ids to "postAlternates" in site.config.json of this repository
+// (new id -> id of the same article in the other language), and the reverse pair in
+// site.config.json of the other repository. Without it the article is published with no
+// hreflang at all, so the two language versions look like unrelated pages to search
+// engines and to AI crawlers. No build step can infer the pair: that map is the only
+// place the two ids are connected.
 
 export const posts = [
   {
