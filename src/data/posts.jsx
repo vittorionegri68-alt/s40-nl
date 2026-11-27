@@ -22,6 +22,32 @@
 
 export const posts = [
   {
+    id: "wedstrijdvoorbereiding-racefiets-nijkerk",
+    metaTitolo: "Wedstrijdvoorbereiding racefiets Nijkerk | S40 Fietsservice",
+    metaDescrizione: "Wedstrijd in aantocht? Lees hoe je je racefiets laat nakijken en afstellen bij S40 Fietsservice in Nijkerk en hoe vroeg je langs moet komen.",
+    titolo: "Wedstrijd binnenkort? Zo laat je je racefiets nakijken en voorbereiden bij Nijkerk",
+    data: "2026-11-27",
+    categoria: "Blog",
+    sommario:
+      "Heb je binnenkort een wedstrijd, plan dan op tijd een afspraak om je racefiets na te laten kijken. Lees wat het team bekijkt, wat je meeneemt en wat je doet als de start dichterbij is dan je dacht.",
+    contenuto: [
+      { tipo: "paragrafo", testo: "Heb je binnenkort een wedstrijd, breng je racefiets dan ruim van tevoren naar de werkplaats. Bij S40 Fietsservice in Nijkerk is de gebruikelijke doorlooptijd 24 uur, maar wie zeker wil zijn van een goede voorbereiding plant niet op het laatste moment. Een probleem aan je fiets kom je liever in de werkplaats op het spoor dan halverwege de wedstrijd." },
+      { tipo: "titoletto", testo: "Wat wordt er nagekeken?" },
+      { tipo: "paragrafo", testo: "Het team kijkt naar de hele fiets en niet alleen naar het onderdeel waar jij over twijfelt: aandrijving, remmen, wielen en positie. Daarna wordt de fiets afgesteld. Vraagt jouw wedstrijd om UCI-normen, zeg dat dan bij het maken van de afspraak. Dan maakt het team de fiets daarop klaar." },
+      { tipo: "paragrafo", testo: "Elke wedstrijd vraagt iets anders van een fiets. Een wegwedstrijd, een tijdrit, een baanwedstrijd en een gravelwedstrijd stellen andere eisen. S40 werkt aan racefietsen, tijdrit- en triatlonfietsen, baanfietsen en gravelbikes, dus je kunt met elk van die fietsen terecht." },
+      { tipo: "paragrafo", testo: "De monteurs hebben in UCI-teams gewerkt en kennen de spanning rond een startlijn. Ze rijden zelf ook, dus ze weten wat het betekent als een fiets op een vaste datum klaar moet zijn. Ze stoppen niet als de versnellingen schakelen, maar als alles in elke positie goed werkt." },
+      { tipo: "titoletto", testo: "Wanneer kom je langs en wat neem je mee?" },
+      { tipo: "paragrafo", testo: "Maak op tijd een afspraak, liefst niet pas in de week van de wedstrijd. Dan is er ruimte om een probleem rustig op te lossen als het zich laat zien, in plaats van onder tijdsdruk. Neem de fiets mee zoals je hem in de wedstrijd rijdt en vertel om welke wedstrijd het gaat en wanneer die is. Noem ook wat je tijdens het trainen hebt gemerkt, zoals een geluid, een versnelling die aarzelt of een remhendel die anders aanvoelt. Hoe duidelijker je vraag, hoe gerichter het nakijken." },
+      { tipo: "paragrafo", testo: "Moet er eerst iets worden uitgezocht, dan neemt het team de tijd om het goed op te lossen. De tijd die het zoeken naar een oplossing kost, wordt niet doorgerekend." },
+      { tipo: "paragrafo", testo: "Rij je fiets na het nakijken nog een paar keer, op de wielen en banden waarmee je gaat starten, en controleer dan ook zelf de bandenspanning en of de ketting schoon en gesmeerd is. Merk je iets, laat het dan weten, zodat het nog kan worden bijgesteld." },
+      { tipo: "paragrafo", testo: "Zit je al langer niet lekker op je fiets, of heb je tijdens of na het rijden pijn of ongemak? Laat dan ook de afstelling bekijken. Lees [[wat een bikefit is en wanneer je er een nodig hebt|bikefit-nijkerk]]." },
+      { tipo: "paragrafo", testo: "Is de start al dichtbij? Bel dan gerust: het team kijkt wat er kan. Heeft je fiets een probleem dat andere werkplaatsen niet hebben opgelost, ook dat neemt S40 aan. Lees [[waar je in Nijkerk terecht kunt als racefietser|racefietsenmaker-nijkerk]]." },
+      { tipo: "titoletto", testo: "Langskomen of een afspraak maken" },
+      { tipo: "paragrafo", testo: "Je kunt binnenlopen tijdens de openingstijden: dinsdag tot en met vrijdag van 10:00 tot 18:00 uur en zaterdag van 10:00 tot 16:00 uur. Voor een wedstrijd die eraan komt is een afspraak handig, via service@s40.nl of +31 6 26980438. De werkplaats zit aan de Singel 40, 3861 AE Nijkerk. Op zondag en maandag zijn we gesloten. Prijzen zijn op aanvraag." },
+    ],
+    attivo: true,
+  },
+  {
     id: "colossi-frames-nijkerk",
     metaTitolo: "Colossi frames in Nijkerk | S40 Fietsservice",
     metaDescrizione: "Colossi bouwt handgemaakte Nederlandse fietsframes op maat. S40 Fietsservice in Nijkerk helpt bij de keuze van het frame en de montage van je fiets.",
